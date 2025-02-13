@@ -1,0 +1,129 @@
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+.scrabble-board {
+    position: relative;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+td {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid #333;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+td {
+    background-color: #4caf50; /* Zöld alapszín */
+}
+
+td.ut {
+    background-color: rgb(164, 91, 91) !important; /* Világos rózsaszín */
+    color: black;
+}
+
+td.folyohal::before{
+    content: "\1F41F";
+}
+
+td.fa::before{
+    content: "\1F333";
+    font-size: 1.5rem;
+    
+}
+
+td.fa{
+    background-color: #4caf50 !important;
+}
+
+
+td.folyohal{
+    background-color: #87ceeb !important;
+}
+
+td.utembi::before{
+    content: "\1F9CD";
+    font-size: 1.5rem;
+    
+}
+
+td.utembi{
+    background-color: rgb(164, 91, 91) !important;
+}
+
+td.folyo {
+    background-color: #87ceeb !important; /* Világoskék */
+    color: black;
+}
+
+/* Táblázat sor- és oszlopszámozása */
+table {
+    counter-reset: row-counter column-counter;
+}
+
+th {
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    background-color: #fff;
+}
+
+thead th:first-child,
+tbody td:first-child {
+    counter-increment: row-counter;
+    content: counter(row-counter);
+}
+
+
+.control-panel {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.control-panel button {
+    background-color: gray;
+    border: none;
+    color: white;
+    width: 60px; /* Fix szélesség */
+    height: 60px; /* Fix magasság */
+    font-size: 20px; /* Nagyobb betűméret a könnyebb olvashatóságért */
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px; /* Egyenletes távolság */
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-panel button:hover {
+    background-color: gray;
+}
+
+.horizontal-controls {
+    display: flex;
+    gap: 60px;
+}
